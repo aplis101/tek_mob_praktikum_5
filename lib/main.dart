@@ -99,7 +99,9 @@ class ProfilePage extends StatelessWidget {
                 // 1. الصورة الشخصية
                 const CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/images/profile_placeholder.png'),
+                  backgroundImage: AssetImage(
+                    'assets/images/profile_placeholder.png',
+                  ),
                 ),
                 const SizedBox(height: 16),
 
@@ -224,7 +226,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text('Kalkulator Sederhana', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Kalkulator Sederhana',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.indigo,
         centerTitle: true,
       ),
@@ -236,7 +241,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
             children: [
               Card(
                 elevation: 4,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -247,20 +254,30 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           labelText: 'Angka Pertama',
-                          prefixIcon: const Icon(Icons.looks_one, color: Colors.indigo),
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                          prefixIcon: const Icon(
+                            Icons.looks_one,
+                            color: Colors.indigo,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
-                      
+
                       // حقل الرقم الثاني
                       TextField(
                         controller: _angka2Controller,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           labelText: 'Angka Kedua',
-                          prefixIcon: const Icon(Icons.looks_two, color: Colors.indigo),
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                          prefixIcon: const Icon(
+                            Icons.looks_two,
+                            color: Colors.indigo,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                     ],
@@ -268,7 +285,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 ),
               ),
               const SizedBox(height: 24),
-              
+
               // أزرار العمليات الحسابية
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -280,16 +297,20 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 ],
               ),
               const SizedBox(height: 32),
-              
+
               // عرض النتيجة المتغيرة
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: _hasil.contains('Error') ? Colors.red[50] : Colors.indigo[50],
+                  color: _hasil.contains('Error')
+                      ? Colors.red[50]
+                      : Colors.indigo[50],
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: _hasil.contains('Error') ? Colors.red : Colors.indigo,
+                    color: _hasil.contains('Error')
+                        ? Colors.red
+                        : Colors.indigo,
                     width: 2,
                   ),
                 ),
@@ -299,7 +320,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: _hasil.contains('Error') ? Colors.red : Colors.indigo,
+                    color: _hasil.contains('Error')
+                        ? Colors.red
+                        : Colors.indigo,
                   ),
                 ),
               ),
